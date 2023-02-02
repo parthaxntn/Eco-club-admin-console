@@ -1,0 +1,162 @@
+.MemberPage {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* .expand {
+    --height: unset;
+}
+
+.shrink {
+    --height: 7rem;
+} */
+
+.bright {
+    --gray: white;
+    --boxshadow: rgba(109, 109, 109, 0.9);
+    --CPbg1: rgba(255, 203, 203, 0.95);
+    --CPbg2: rgba(245, 245, 245, 0.95);
+}
+
+.dark {
+    --gray: rgba(27, 60, 84, 0.95);
+    --boxshadow: rgba(53, 53, 53, 0.9);
+    --CPbg1: rgba(32, 39, 62, 0.95);
+    --CPbg2: rgba(37, 47, 75, 0.95);
+}
+
+img {
+    height: 5rem;
+    width: 5rem;
+}
+
+.createPage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    background: radial-gradient(circle at top, var(--CPbg1), var(--CPbg2));
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+    z-index: 10;
+    border: 2px solid var(--gray);
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 7px 2px var(--boxshadow);
+    color: var(--black);
+}
+
+.createPage input,
+.createPage textarea,
+.createPage fieldset div input {
+    border: none;
+    outline: none;
+    border-bottom: 3px solid black;
+    background: var(--whitesmoke);
+    padding: .5rem;
+    border-radius: .2rem;
+    transition: all 0.3s ease-in-out;
+    color: var(--black);
+}
+
+.createPage input:focus,
+.createPage textarea:focus,
+.createPage fieldset div input:focus {
+    border-bottom: 3px solid orange;
+    background: var(--gray);
+}
+
+.createPage fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1px dashed var(--black);
+}
+
+.createPage fieldset div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+    padding: 0.5rem;
+}
+
+.createPage .close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.headBar {
+    background-color: rgb(216, 216, 216);
+    margin: 0;
+    padding: 0;
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: .5rem .5rem;
+    color: var(--black);
+}
+
+.row {
+    width: 25rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    background: var(--gray);
+    gap: 1rem;
+    overflow-y: hidden;
+    height: 7rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 5px 1px var(--boxshadow);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.row h3 {
+    min-width: 15rem;
+    text-align: right;
+}
+
+.expand {
+    height: 15rem;
+}
+
+a:hover {
+    color: orange;
+}
+
+.row p,
+.row div {
+    padding: 0.5rem;
+    background: var(--gray);
+    border-radius: .2rem;
+}
+
+.row p:hover,
+.row div:hover {
+    padding: 0.5rem;
+    background: var(--whitesmoke);
+    border-radius: .2rem;
+}
+
+.imageUpload {
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 15rem;
+    height: 15rem;
+}
