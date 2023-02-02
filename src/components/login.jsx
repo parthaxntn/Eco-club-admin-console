@@ -17,7 +17,7 @@ const Login = ({ setIn, In, mode }) => {
     async function login() {
       try {
         const res = await axios.post(
-          `${ServerUrl}/login`,
+          `${ServerUrl}/admin/login`,
           {
             "username": email,
             "password": password
