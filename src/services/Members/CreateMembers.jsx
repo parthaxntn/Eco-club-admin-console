@@ -1,12 +1,14 @@
 import axios from 'axios';
+import { useContext } from 'react';
 import { toast } from 'react-toastify';
+import StateCon from '../../components/Context/CreateContext';
 
-const CreateMembers = async (sendForm, setDataTransfer, reloadReq, setReloadReq) => {
+const CreateMembers = async (sendForm, setDataTransfer, reloadReq, setReloadReq, pageRoute) => {
   const ServerUrl = process.env.REACT_APP_SERVER_URL;
   try {
     console.log(sendForm);
     const res = await axios.post(
-      `${ServerUrl}/infos/blog/new`,
+      `${ServerUrl}/infos/${pageRoute}/new`,
       sendForm,
       {
         headers: { "Content-Type": "multipart/form-data" },

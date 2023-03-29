@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../styles/MemberPage.css";
 import MemberGrid from "../components/memberGrid";
 import MemberCreate from "../components/MemberCreate";
@@ -6,6 +6,7 @@ import Loader from "../components/loader";
 import GetMembers from "../services/Members/GetMembers";
 import "toastify-js/src/toastify.css";
 import { toast } from "react-toastify";
+import StateCon from "../components/Context/CreateContext";
 
 const MemberPage = ({ mode }) => {
   const [loading, setLoading] = useState(true);
@@ -15,10 +16,11 @@ const MemberPage = ({ mode }) => {
   const [dataReserved, setDataReserved] = useState([]);
   const [seSSion, setSeSSion] = useState("21-22");
   const [reloadReq, setReloadReq] = useState(false);
+  const {pageRoute} = useContext(StateCon)
 
   const fetch = async (session) => {
     setLoading(true);
-    const members = await GetMembers(session);
+    const members = await GetMembers(session, pageRoute);
     setData(members);
     setLoading(false);
   };

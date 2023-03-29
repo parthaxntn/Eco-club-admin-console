@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "../styles/Navbar.css";
 import { useCookies } from 'react-cookie';
 import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
+import StateCon from './Context/CreateContext';
 
 const Navbar = ({ setIn, In, mode, setMode }) => {
   const [cookies, setCookie, removeCookie] = useCookies(['css']);
+  const { pageRoute } = useContext(StateCon)
 
   const handleLogout = () => {
-    setCookie('CSS_Website', undefined, { path: '/' });
+    setCookie('ECO_Website', undefined, { path: '/' });
     setIn(false);
   }
   const handleMode = () => {
@@ -21,7 +23,7 @@ const Navbar = ({ setIn, In, mode, setMode }) => {
           mode ? <BsMoonFill className='modeIcons' onClick={handleMode} /> : <BsFillSunFill className='modeIcons' onClick={handleMode} />
         }
       </div>
-      <h2>CSS Admin Console</h2>
+      <h2>ECO Admin Console {pageRoute}</h2>
       <div>
         {In ?
           (<button type="button" className="btn" onClick={handleLogout}>Log Out</button>) : ''
